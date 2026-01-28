@@ -1,4 +1,4 @@
-# 🔬 Automated Detection of *Trypanosoma cruzi* in Microscopy Images
+# Automated Detection of *Trypanosoma cruzi* in Microscopy Images
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [About](#about)
 - [Problem & Motivation](#problem--motivation)
@@ -25,55 +25,60 @@
 
 ---
 
-## 🎯 About
+## About
 
 This project implements a **binary classification system** to automatically detect the presence of *Trypanosoma cruzi* parasites in microscopy images. *T. cruzi* is the causative agent of Chagas disease, a neglected tropical disease affecting millions of people in the Americas.
 
 The goal is to assist healthcare professionals in rapid and accurate diagnosis through **artificial intelligence**, reducing manual analysis time and increasing detection accuracy.
 
-### ✨ Highlights
+This project extends the work published in the International Journal of Bio-Inspired Computation (IJBIC). The dataset is my original work. **DOI:** [10.1504/ijbic.2022.12074](https://doi.org/10.1504/ijbic.2022.12074)
 
-- 🏆 **AUC of 0.989** on validation set
-- 📊 **Average accuracy of 93.8%** on real test data
-- 🎯 **Sensitivity of 94.2%** (parasite detection rate)
-- ✅ **Specificity of 92.7%** (low false positive rate)
-- 🚀 Comparison between VGG16 and MobileNetV2
-- 💪 Robust overfitting solution through regularization techniques
+### Highlights
+
+- **AUC of 0.989** on validation set
+- **Average accuracy of 93.8%** on real test data
+- **Sensitivity of 94.2%** (parasite detection rate)
+- **Specificity of 92.7%** (low false positive rate)
+- Comparison between VGG16 and MobileNetV2
+- Robust overfitting solution through regularization techniques
 
 ---
 
-## 🔍 Problem & Motivation
+## Problem & Motivation
 
 ### Clinical Challenge
 
-Traditional *T. cruzi* detection requires:
-- ⏱️ Time-consuming manual analysis by specialized microscopists
-- 👁️ High level of attention and expertise
-- 🔬 Identification of small parasites (~20μm) in large samples
-- ⚠️ Risk of false negatives in low parasitemia cases
+Traditional *T. cruzi* detection in blood samples requires:
+- Time-consuming manual analysis by specialized microscopists
+- Is only possible for acute phase pacients
+- High level of attention and expertise
+- Identification of small parasites (~20 μm) in large samples
+- Risk of false negatives in low parasitemia cases
 
 ### Proposed Solution
 
 A deep learning model that:
-- ✅ Automates initial slide screening
-- ✅ Reduces analysis time
-- ✅ Maintains high sensitivity to avoid missing positive cases
-- ✅ Provides decision support for healthcare professionals
+- Automates initial slide screening
+- Reduces analysis time
+- Maintains high sensitivity to avoid missing positive cases
+- Provides decision support for healthcare professionals
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 ### Characteristics
+
+Traditional blood smear slides images were otained from microscopes, and then processed for guaranting positive and negative images balancing as well as resolution.
 
 - **Resolution:** 224×224 pixels
 - **Classes:** 
   - `Positive (1)`: Presence of *T. cruzi*
   - `Negative (0)`: Absence of parasite
 - **Split:**
-  - 🏋️ Train: ~1,600 images
-  - 📝 Validation: ~700 images
-  - 🧪 Test: 5 independent slides (18, 19, 20, 23, 24)
+  - Train: ~1,600 images
+  - Validation: ~700 images
+  - Test: 5 independent slides (18, 19, 20, 23, 24)
 
 ### Preprocessing
 
@@ -89,15 +94,15 @@ transforms.Normalize(
 
 To increase model robustness, we apply random transformations during training:
 
-- ↔️ Horizontal and vertical flip (p=0.5)
-- 🔄 Random rotation (±15°)
-- 📐 Affine transformation (translation, scale, shear)
-- 🎨 Color jitter (brightness, contrast, saturation, hue)
-- ✂️ Random crop with scale 0.8-1.0
+- Horizontal and vertical flip (p=0.5)
+- Random rotation (±15°)
+- Affine transformation (translation, scale, shear)
+- Color jitter (brightness, contrast, saturation, hue)
+- Random crop with scale 0.8-1.0
 
 ---
 
-## 🧠 Methodology
+## Methodology
 
 ### 1. Transfer Learning
 
@@ -146,43 +151,43 @@ model.classifier = nn.Sequential(
 
 ---
 
-## 🏗️ Model Architectures
+## Model Architectures
 
 ### VGG16
 
 **Features:**
-- 📦 138 million parameters
-- 🎯 Classic and well-established architecture
-- 🔧 Deep convolutional layers (13 conv + 3 FC)
+- 138 million parameters
+- Classic and well-established architecture
+- Deep convolutional layers (13 conv + 3 FC)
 
 **Advantages:**
-- ✅ High learning capacity
-- ✅ Robust features for classification
-- ✅ Extensively studied and tested
+- High learning capacity
+- Robust features for classification
+- Extensively studied and tested
 
 **Disadvantages:**
-- ⚠️ Heavy model (>500MB)
-- ⚠️ Slower inference
+- Heavy model (>500MB)
+- Slower inference
 
 ### MobileNetV2
 
 **Features:**
-- 📦 3.5 million parameters
-- 🚀 Optimized for efficiency
-- 🔧 Depthwise separable convolutions
+- 3.5 million parameters
+- Optimized for efficiency
+- Depthwise separable convolutions
 
 **Advantages:**
-- ✅ Lightweight model (~14MB)
-- ✅ Fast inference
-- ✅ Ideal for mobile devices
+- Lightweight model (~14MB)
+- Fast inference
+- Ideal for mobile devices
 
 **Disadvantages:**
-- ⚠️ Lower capacity than VGG16
-- ⚠️ May have slightly lower performance
+- Lower capacity than VGG16
+- May have slightly lower performance
 
 ---
 
-## 📈 Results
+## Results
 
 ### VGG16 - Validation Metrics
 
@@ -201,23 +206,23 @@ model.classifier = nn.Sequential(
 | **24** | 936 | **97.4%** | **99.8%** | 95.2% | 457 | 23 | 455 | 1 |
 | **Average** | - | **93.8%** | **94.2%** | **92.7%** | - | - | - | - |
 
-### 📊 Results Interpretation
+### Results Interpretation
 
-**🎯 Sensitivity (Recall) - 94.2%:**
+**Sensitivity (Recall) - 94.2%:**
 - Model detects **94 out of 100** parasites present
 - Crucial for diagnosis: **few false negatives**
 - Slide 23: 100% detection rate!
 
-**✅ Specificity - 92.7%:**
+**Specificity - 92.7%:**
 - Model correctly identifies **93 out of 100** negative samples
 - Reduces manual review workload for false positives
 - Slide 18: 98.7% - excellent reliability
 
-**📈 Overall Accuracy - 93.8%:**
+**Overall Accuracy - 93.8%:**
 - Consistent performance across 4 out of 5 slides (>93%)
 - Slide 18: 86.3% (possibly different characteristics)
 
-### 🏆 Highlights by Slide
+### Highlights by Slide
 
 - **Slide 23:** Perfect performance (100% sensitivity, 0 false negatives)
 - **Slide 24:** Largest dataset (936 samples), maintained 99.8% sensitivity
@@ -225,11 +230,11 @@ model.classifier = nn.Sequential(
 
 ### MobileNetV2 - Results
 
-> 🚧 **Under development** - Results will be added soon
+> **Under development** - Results will be added soon
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Projeto-Trypanossoma/
@@ -280,7 +285,7 @@ Projeto-Trypanossoma/
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 ### 1. Clone the Repository
 
@@ -334,7 +339,7 @@ print(f"Confidence: {result:.2%}")
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 ```txt
 torch>=2.0.0
@@ -355,35 +360,35 @@ tqdm>=4.65.0
 
 ---
 
-## 💡 Challenges & Solutions
+## Challenges & Solutions
 
-### 🔥 Challenge 1: Severe Overfitting
+### Challenge 1: Severe Overfitting
 
 **Symptoms:**
 - Train loss decreasing, but validation loss increasing
 - Growing gap between training and validation
 
 **Identified Causes:**
-1. ❌ Pre-generated augmented dataset (fixed images)
-2. ❌ BatchNorm with small dataset causing noise
-3. ❌ Learning rate too high (1e-4)
-4. ❌ All VGG layers trainable
+1. Pre-generated augmented dataset (fixed images)
+2. BatchNorm with small dataset causing noise
+3. Learning rate too high (1e-4)
+4. All VGG layers trainable
 
 **Implemented Solutions:**
-1. ✅ On-the-fly data augmentation (infinite variations)
-2. ✅ Removed BatchNorm from classifier
-3. ✅ Reduced learning rate to 5e-5
-4. ✅ Froze VGG features
-5. ✅ Simplified classifier (512 → 256 features)
-6. ✅ Dropout of 0.5
-7. ✅ Weight decay of 1e-4
+1. On-the-fly data augmentation (infinite variations)
+2. Removed BatchNorm from classifier
+3. Reduced learning rate to 5e-5
+4. Froze VGG features
+5. Simplified classifier (512 → 256 features)
+6. Dropout of 0.5
+7. Weight decay of 1e-4
 
 **Result:**
 - Stable val loss converging with train loss
 - Minimal gap between curves
 - AUC of 0.989
 
-### 🐛 Challenge 2: Label Misalignment
+### Challenge 2: Label Misalignment
 
 **Symptom:**
 - Inconsistent and unexpected results
@@ -400,7 +405,7 @@ df = pd.DataFrame({
 })
 ```
 
-### ⚡ Challenge 3: Slow Convergence
+### Challenge 3: Slow Convergence
 
 **Symptom:**
 - Model not improving after several epochs
@@ -414,22 +419,20 @@ df = pd.DataFrame({
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 - [ ] Implement and compare MobileNetV2
 - [ ] Test other architectures (ResNet, EfficientNet)
 - [ ] Implement model ensemble
-- [ ] Create web interface with Gradio/Streamlit
 - [ ] Parasite segmentation (exact localization)
 - [ ] Automatic parasitemia quantification
 - [ ] Detection of other protozoa
-- [ ] Mobile device deployment (TFLite/ONNX)
 - [ ] Explainability with Grad-CAM
 - [ ] Dataset augmentation with GAN techniques
 
 ---
 
-## 📚 References
+## References
 
 1. World Health Organization. (2023). Chagas disease (American trypanosomiasis)
 2. Simonyan, K., & Zisserman, A. (2014). Very Deep Convolutional Networks for Large-Scale Image Recognition
@@ -438,49 +441,35 @@ df = pd.DataFrame({
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**[Your Name]**
+**[André Pereira]**
 
-- 🎓 PhD Candidate in [Your Field]
-- 💼 LinkedIn: [your-linkedin](https://linkedin.com/in/your-profile)
-- 📧 Email: your.email@example.com
-- 🐙 GitHub: [@your-username](https://github.com/your-username)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- Doctoral Student in Biological Sciences (Physyology)
+- LinkedIn: 
+- Email: andresilper5@gmail.com
+- GitHub: https://github.com/andresilper
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- Dataset provided by [Institution/Laboratory]
-- Computational infrastructure: [GPU/Cloud provider]
-- Advisor: [Advisor name]
+- The dataset included in this repository is my original work
+- Computational infrastructure: Laboratory of Cognitive Physyology UFRJ-Brazil/Rio de Janeiro
+- Advisor: Juliana Guimarães Martins Soares
 
 ---
+## Acknowledgments
 
-## 📊 Project Status
+- Free for academic/research/educational purposes
+- Commercial use requires permission
+- Citation required
+  
+---
+## Project Status
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
 **Last update:** January 2026
 
----
 
-## 🇧🇷 Portuguese Version
-
-[Documentação em português disponível aqui](README-pt.md)
-
----
-
-<div align="center">
-
-**⭐ If this project was useful to you, please consider giving it a star!**
-
-Made with ❤️ and 🐍 Python
-
-</div>
