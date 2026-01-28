@@ -31,7 +31,7 @@ This project implements a **binary classification system** to automatically dete
 
 The goal is to assist healthcare professionals in rapid and accurate diagnosis through **artificial intelligence**, reducing manual analysis time and increasing detection accuracy.
 
-This project extends the work published in the International Journal of Bio-Inspired Computation (IJBIC). The dataset is my original work. **DOI:** [10.1504/ijbic.2022.12074](https://doi.org/10.1504/ijbic.2022.12074)
+This project extends the work published in the International Journal of Bio-Inspired Computation (IJBIC). The dataset is my original work. **DOI:** 10.1504/IJBIC.2022.10044882
 
 ### Highlights
 
@@ -434,10 +434,11 @@ df = pd.DataFrame({
 
 ## References
 
-1. World Health Organization. (2023). Chagas disease (American trypanosomiasis)
-2. Simonyan, K., & Zisserman, A. (2014). Very Deep Convolutional Networks for Large-Scale Image Recognition
-3. Sandler, M., et al. (2018). MobileNetV2: Inverted Residuals and Linear Bottlenecks
-4. He, K., et al. (2016). Deep Residual Learning for Image Recognition
+1. Pereira, A.S., Mazza, L.O., Pinto, P.C.C., Gomes, J.G.R.C., Nedjah, N., Vanzan, D.F., Pyrrho, A.S. and Soares, J.G.M. (2022) ‘Deep convolutional neural network applied to Trypanosoma cruzi detection in blood samples’, Int. J. Bio-Inspired Computation, Vol. 19, No. 1, pp.1–17.
+2. World Health Organization. (2023). Chagas disease (American trypanosomiasis)
+3. Simonyan, K., & Zisserman, A. (2014). Very Deep Convolutional Networks for Large-Scale Image Recognition
+4. Sandler, M., et al. (2018). MobileNetV2: Inverted Residuals and Linear Bottlenecks
+5. He, K., et al. (2016). Deep Residual Learning for Image Recognition
 
 ---
 
