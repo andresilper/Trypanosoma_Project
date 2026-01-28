@@ -446,7 +446,7 @@ df = pd.DataFrame({
 **[André Pereira]**
 
 - Doctoral Student in Biological Sciences (Physyology)
-- LinkedIn: 
+- LinkedIn: www.linkedin.com/in/andré-da-silva-pereira-912b65134
 - Email: andresilper5@gmail.com
 - GitHub: https://github.com/andresilper
 
