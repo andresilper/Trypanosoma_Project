@@ -69,7 +69,7 @@ A deep learning model that:
 
 ### Characteristics
 
-Traditional blood smear slides images were otained from microscopes, and then processed for guaranting positive and negative images balancing as well as resolution.
+Traditional blood smear slides images were otained from microscopes, and then processed for guaranteeing positive and negative images balance as well as resolution.
 
 - **Resolution:** 224×224 pixels
 - **Classes:** 
