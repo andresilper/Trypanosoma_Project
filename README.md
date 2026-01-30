@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > Automatic detection of *Trypanosoma cruzi* parasites in microscopy images using Deep Learning with Transfer Learning (VGG16 and MobileNetV2).
-The dataset used in this work is available at https://www.kaggle.com/datasets/andrpereira157/trypanosoma-cruzi-microscopy-detection-dataset.
+The dataset used in this work is available here at GitHub (trypanosoma_v4.rar) and at https://www.kaggle.com/datasets/andrpereira157/trypanosoma-cruzi-microscopy-detection-dataset.
 ---
 
 ## Table of Contents
@@ -302,7 +302,7 @@ pip install -r requirements.txt
 
 ### 3. Dataset
 
-The complete dataset (10MB) is **available at (https://www.kaggle.com/datasets/andrpereira157/trypanosoma-cruzi-microscopy-detection-dataset)** for reproducibility, since it was not possible to upload here.
+The complete dataset (10MB) is **available in this project (trypanosoma_v4.rar) and at (https://www.kaggle.com/datasets/andrpereira157/trypanosoma-cruzi-microscopy-detection-dataset)** for reproducibility.
 
 ### 4. Train the Model
 
