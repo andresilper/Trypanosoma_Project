@@ -418,7 +418,19 @@ df = pd.DataFrame({
 - Start with higher LR (5e-5), reduce when plateauing
 
 ---
+## Model Comparison: VGG vs MobileNetV2
 
+Two convolutional neural network architectures were evaluated on this dataset: a VGG-based model and a MobileNetV2 model.
+
+The MobileNetV2 achieved strong performance with a validation AUC of approximately 0.94–0.95 (including 5-fold cross-validation), demonstrating good generalization and computational efficiency. However, its test performance showed reduced sensitivity on some slides, particularly those with more challenging visual characteristics.
+
+The VGG-based model, after architectural refinement and regularization, achieved a validation AUC of 0.989, with consistently strong results across all test slides. In particular, the VGG model demonstrated significantly higher recall, drastically reducing false negatives while maintaining high specificity.
+
+Across all evaluated test sets, the VGG model outperformed MobileNetV2 in terms of sensitivity and overall accuracy, indicating superior discriminative capacity for parasite detection in blood smear images. This performance gain, however, comes at the cost of increased computational complexity and longer training times.
+
+In summary, MobileNetV2 represents an efficient and lightweight solution, while VGG provides superior detection performance when computational resources allow. The choice between models therefore depends on the intended deployment scenario, balancing accuracy requirements and computational constraints.
+
+---
 ## Future Work
 
 - [ ] Implement and compare MobileNetV2
