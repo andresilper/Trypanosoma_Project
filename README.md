@@ -287,7 +287,31 @@ model.classifier = nn.Sequential(
 - Best performance observed on slides with clearer morphological patterns (23, 24).
 
 ---
+## Model Comparison: VGG vs MobileNetV2
 
+Two convolutional neural network architectures were evaluated on this dataset: a VGG-based model and a MobileNetV2 model.
+
+The MobileNetV2 achieved strong performance with a validation AUC of approximately 0.94–0.95 (including 5-fold cross-validation), demonstrating good generalization and computational efficiency. However, its test performance showed reduced sensitivity on some slides, particularly those with more challenging visual characteristics.
+
+The VGG-based model, after architectural refinement and regularization, achieved a validation AUC of 0.989, with consistently strong results across all test slides. In particular, the VGG model demonstrated significantly higher recall, drastically reducing false negatives while maintaining high specificity.
+
+Across all evaluated test sets, the VGG model outperformed MobileNetV2 in terms of sensitivity and overall accuracy, indicating superior discriminative capacity for parasite detection in blood smear images. This performance gain, however, comes at the cost of increased computational complexity and longer training times.
+
+In summary, MobileNetV2 represents an efficient and lightweight solution, while VGG provides superior detection performance when computational resources allow. The choice between models therefore depends on the intended deployment scenario, balancing accuracy requirements and computational constraints.
+
+---
+## Future Work
+
+- [x] Implement and compare MobileNetV2
+- [ ] Test other architectures (ResNet, EfficientNet)
+- [ ] Implement model ensemble
+- [ ] Parasite segmentation (exact localization)
+- [ ] Automatic parasitemia quantification
+- [ ] Detection of other protozoa
+- [ ] Explainability with Grad-CAM
+- [ ] Dataset augmentation with GAN techniques
+
+---
 ## Project Structure
 
 ```
@@ -472,32 +496,6 @@ df = pd.DataFrame({
 - Start with higher LR (5e-5), reduce when plateauing
 
 ---
-## Model Comparison: VGG vs MobileNetV2
-
-Two convolutional neural network architectures were evaluated on this dataset: a VGG-based model and a MobileNetV2 model.
-
-The MobileNetV2 achieved strong performance with a validation AUC of approximately 0.94–0.95 (including 5-fold cross-validation), demonstrating good generalization and computational efficiency. However, its test performance showed reduced sensitivity on some slides, particularly those with more challenging visual characteristics.
-
-The VGG-based model, after architectural refinement and regularization, achieved a validation AUC of 0.989, with consistently strong results across all test slides. In particular, the VGG model demonstrated significantly higher recall, drastically reducing false negatives while maintaining high specificity.
-
-Across all evaluated test sets, the VGG model outperformed MobileNetV2 in terms of sensitivity and overall accuracy, indicating superior discriminative capacity for parasite detection in blood smear images. This performance gain, however, comes at the cost of increased computational complexity and longer training times.
-
-In summary, MobileNetV2 represents an efficient and lightweight solution, while VGG provides superior detection performance when computational resources allow. The choice between models therefore depends on the intended deployment scenario, balancing accuracy requirements and computational constraints.
-
----
-## Future Work
-
-- [x] Implement and compare MobileNetV2
-- [ ] Test other architectures (ResNet, EfficientNet)
-- [ ] Implement model ensemble
-- [ ] Parasite segmentation (exact localization)
-- [ ] Automatic parasitemia quantification
-- [ ] Detection of other protozoa
-- [ ] Explainability with Grad-CAM
-- [ ] Dataset augmentation with GAN techniques
-
----
-
 ## References
 
 1. Pereira, A.S., Mazza, L.O., Pinto, P.C.C., Gomes, J.G.R.C., Nedjah, N., Vanzan, D.F., Pyrrho, A.S. and Soares, J.G.M. (2022) ‘Deep convolutional neural network applied to Trypanosoma cruzi detection in blood samples’, Int. J. Bio-Inspired Computation, Vol. 19, No. 1, pp.1–17.
@@ -524,10 +522,6 @@ In summary, MobileNetV2 represents an efficient and lightweight solution, while 
 - The dataset included in this repository is my original work
 - Computational infrastructure: Laboratory of Cognitive Physyology UFRJ-Brazil/Rio de Janeiro
 - Advisor: Juliana Guimarães Martins Soares
-
----
-## Acknowledgments
-
 - Free for academic/research/educational purposes
 - Commercial use requires permission
 - Citation required
