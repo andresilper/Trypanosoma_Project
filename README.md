@@ -302,7 +302,7 @@ pip install -r requirements.txt
 
 ### 3. Dataset
 
-The complete dataset (10MB) is **included in this repository** for reproducibility.
+The complete dataset (10MB) is **available at (https://www.kaggle.com/datasets/andrpereira157/trypanosoma-cruzi-microscopy-detection-dataset)** for reproducibility, since it was not possible to upload here.
 
 ### 4. Train the Model
 
