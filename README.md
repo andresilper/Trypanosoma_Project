@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > Automatic detection of *Trypanosoma cruzi* parasites in microscopy images using Deep Learning with Transfer Learning (VGG16 and MobileNetV2).
-
+The dataset used in this work is available at https://www.kaggle.com/datasets/andrpereira157/trypanosoma-cruzi-microscopy-detection-dataset.
 ---
 
 ## Table of Contents
@@ -27,7 +27,7 @@
 
 ## About
 
-This project implements a **binary classification system** to automatically detect the presence of *Trypanosoma cruzi* parasites in microscopy images. *T. cruzi* is the causative agent of Chagas disease, a neglected tropical disease affecting millions of people in the Americas.
+This project implements a **binary classification system** to automatically detect the presence of *Trypanosoma cruzi* parasites in microscopy images obtained from mice blood. *T. cruzi* is the causative agent of Chagas disease, a neglected tropical disease affecting millions of people in the Americas.
 
 The goal is to assist healthcare professionals in rapid and accurate diagnosis through **artificial intelligence**, reducing manual analysis time and increasing detection accuracy.
 
